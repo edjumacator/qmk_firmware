@@ -17,20 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#define MASTER_RIGHT
-// #define DEBOUNCE 5
+#define EE_HANDS
 
-// #define SERIAL_USART_FULL_DUPLEX   // Enable full duplex operation mode
-// // #define SERIAL_USART_HALF_DUPLEX   // Enable half duplex operation mode
-// #define SERIAL_USART_RX_PIN GP0
-// #define SERIAL_USART_TX_PIN GP1
-// #define SERIAL_USART_TX_PIN GP0
-
-#define SPLIT_HAND_PIN GP26 // Shunt from 3v to GP26 on left side
-
-// #define SPLIT_USB_DETECT
-// #define SOFT_SERIAL_PIN GP0
-
-
-// #define ENCODERS_PAD_A { GP27 }
-// #define ENCODERS_PAD_B { GP28 }
+#define SERIAL_USART_FULL_DUPLEX // Enable full duplex operation mode.
+#define SERIAL_USART_TX_PIN GP0  // USART TX pin
+#define SERIAL_USART_RX_PIN GP1  // USART RX pin

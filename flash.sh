@@ -1,8 +1,14 @@
 #!/bin/bash
 
+SIDE=${1:-left}
+PARAMS="flash"
 
-qmk compile -kb handwired/dactyl_manuform/5x7_1 ./keymap.json &&\
-sudo picotool load .build/handwired_dactyl_manuform_5x7_1_default.uf2
+if [ -n "$SIDE" ]; then
+    PARAMS="flash -bl uf2-split-$SIDE"
+fi
 
+echo $PARAMS
+./mount.sh &
 
+qmk $PARAMS
 

@@ -8,15 +8,35 @@
 
     "bootmagic": {
         "enabled": true,
-        "matrix": [2, 0]
+        "matrix": [0, 0]
+    },
+
+    "encoder": {
+        "enabled": true,
+        "rotary": [{
+            "pin_a": "GP29",
+            "pin_b": "GP28",
+            "resolution": 4
+        }]
     },
 
     "features": {
-        "extrakey": true,
         "bootmagic": true,
-        "nkro": true,
+        "caps_word": true,
+        "command": true,
         "console": true,
-        "command": true
+        "dynamic_macro": true,
+        "encoder_map": true,
+        "encoder": true,
+        "extrakey": true,
+        "nkro": true,
+        "tri_layer": true
+    },
+
+    "caps_word": {
+        "enabled": true,
+        "both_shifts_turns_on": true,
+        "double_tap_shift_turns_on": true
     },
 
     "matrix_pins": {
@@ -26,28 +46,26 @@
 
     "split": {
         "enabled": true,
-        "handedness": {
-            "pin": "GP26"
-        },
-        "bootmagic": {
-            "matrix": [8, 6]
-        },
         "matrix_pins": {
             "right": {
                 "cols": [ "GP15", "GP14", "GP13", "GP12", "GP11", "GP10", "GP9" ]
             }
+        },
+        "bootmagic": {
+            "matrix": [6, 6]
         },
         "transport": {
             "protocol": "serial",
             "watchdog": true,
             "watchdog_timeout": 5000,
             "sync": {
+                "activity": true,
                 "matrix_state": true,
                 "detected_os": true,
                 "layer_state": true,
                 "modifiers": true,
                 "wpm": true
-            }
+            },
         }
     },
 
@@ -60,6 +78,10 @@
 
     "processor": "RP2040",
 
+    "tapping": {
+        "toggle": 2
+    },
+
     "usb": {
         "device_version": "1.0.0",
         "pid": "0x0000",
@@ -68,6 +90,10 @@
 
     "leader_key": {
         "enable": true
+    },
+
+    "mouse_key": {
+        "enabled": true
     },
 
     "layouts": {
@@ -158,12 +184,12 @@
 
                 { "matrix": [ 10, 1 ], "x": 14, "y": 4 },
                 { "matrix": [ 10, 2 ], "x": 15, "y": 4 },
-                { "matrix": [ 11, 4 ], "x": 9, "y": 6 },
-                { "matrix": [ 11, 5 ], "x": 10, "y": 6 },
-                { "matrix": [ 11, 2 ], "x": 9, "y": 7 },
-                { "matrix": [ 11, 3 ], "x": 10, "y": 7 }
-
+                { "matrix": [ 11, 1 ], "x": 9, "y": 7 },
+                { "matrix": [ 11, 2 ], "x": 10, "y": 7 },
+                { "matrix": [ 11, 3 ], "x": 9, "y": 6 },
+                { "matrix": [ 11, 4 ], "x": 10, "y": 6 },
             ]
+
         }
     }
 }
