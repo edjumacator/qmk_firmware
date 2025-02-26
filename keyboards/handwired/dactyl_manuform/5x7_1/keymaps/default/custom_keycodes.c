@@ -7,6 +7,5 @@ enum custom_keycodes {
     POWERSCROLL_UP,
     POWERSCROLL_DOWN,
     TO_DEFAULT_LAYER,
-    TOGGLE_MAC,
-    TOGGLE_COLEMAK
+    TOGGLE_MAC
 };
