@@ -25,6 +25,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                       KC_LALT,     KC_LGUI,
                                                       KC_ENT,      TT(_FN),
                                                       KC_MS_BTN4,
+                                                    // right hand
+                                                    KC_PRINT_SCREEN,  KC_6,  KC_7,   KC_8,     KC_9,    KC_0,     KC_DEL,
+                                                    KC_MS_BTN1,       KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,     KC_BSLS,
+                                                    KC_HOME,          KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN,  KC_QUOT,
+                                                    KC_END,           KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH,  KC_RSFT,
+                                                                                     KC_MINS,  KC_EQL,  KC_LBRC,  KC_RBRC,
+                                                    KC_BSPC,          KC_SPC,
+                                                    RGUI_T(KC_ENT),  KC_RCTL,
+                                                    TD(TD_LEAD_FN),   KC_RALT,
+                                                    KC_MS_BTN5
+    ),
+
+    [_MAC] = LAYOUT_5x7_1(
+        // left hand
+        KC_GRV,           KC_1,        KC_2,    KC_3,   KC_4,   KC_5,   TG(_CMD),
+        KC_TAB,           KC_Q,        KC_W,    KC_E,   KC_R,   KC_T,   TG(_NUMPAD),
+        KC_ESC,           KC_A,        KC_S,    KC_D,   KC_F,   KC_G,   KC_PGUP,
+        KC_LSFT,          KC_Z,        KC_X,    KC_C,   KC_V,   KC_B,   KC_PGDN,
+        S(KC_SCLN),       QK_LEAD,     KC_LBRC, KC_RBRC,
+                                                      KC_LSFT,     KC_LCTL,
+                                                      KC_LALT,     KC_LGUI,
+                                                      KC_ENT,      TT(_FN),
+                                                      KC_MS_BTN4,
         // right hand
         KC_PRINT_SCREEN,  KC_6,  KC_7,   KC_8,     KC_9,    KC_0,     KC_DEL,
         KC_MS_BTN1,       KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,     KC_BSLS,
@@ -32,32 +55,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_END,           KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH,  KC_RSFT,
                                          KC_MINS,  KC_EQL,  KC_LBRC,  KC_RBRC,
         RSFT_T(KC_ENT),   KC_SPC,
-        RGUI_T(KC_BSPC),  KC_BSPC,
+        RGUI_T(KC_BSPC),  KC_RCTL,
         TD(TD_LEAD_FN),   KC_RALT,
-        KC_MS_BTN5
-    ),
-
-    [_MAC] = LAYOUT_5x7_1(
-        // left hand
-        KC_GRV,           KC_1,     KC_2,     KC_3,    KC_4,   KC_5,   TG(_CMD),
-        KC_TAB,           KC_Q,     KC_W,     KC_E,    KC_R,   KC_T,   TG(_NUMPAD),
-        KC_ESC,           KC_A,     KC_S,     KC_D,    KC_F,   KC_G,   KC_PGUP,
-        LSFT_T(KC_CAPS),  KC_Z,     KC_X,     KC_C,    KC_V,   KC_B,   KC_PGDN,
-        TOGGLE_VIM,       QK_LEAD,  KC_LBRC,  KC_RBRC,
-                                                      KC_LSFT,     KC_LCTL,
-                                                      KC_LALT,     KC_LGUI,
-                                                      KC_SCLN,     TT(_FN),
-                                                      KC_MS_BTN4,
-
-        // right hand
-        KC_PRINT_SCREEN,  KC_6,  KC_7,   KC_8,     KC_9,    KC_0,     KC_DEL,
-        KC_MS_BTN1,       KC_Y,  KC_U,   KC_I,     KC_O,    KC_P,     KC_BSLS,
-        KC_HOME,          KC_H,  KC_J,   KC_K,     KC_L,    KC_SCLN,  KC_QUOT,
-        KC_END,           KC_N,  KC_M,   KC_COMM,  KC_DOT,  KC_SLSH,  KC_RSFT,
-                                         KC_MINS,  KC_EQL,  KC_LBRC,  KC_RBRC,
-        RCTL_T(KC_SPC),   RSFT_T(KC_ENT),
-        RGUI_T(KC_BSPC),  RALT_T(KC_BSPC),
-        TD(TD_LEAD_FN),   TT(_NUMPAD),
         KC_MS_BTN5
     ),
 
@@ -155,9 +154,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-                  // left                                        // right
+    // left                                                           // right
     [_QWERTY] =  { ENCODER_CCW_CW(KC_MS_WH_LEFT, KC_MS_WH_RIGHT),     ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN)  },
-    [_COLEMAK] = { ENCODER_CCW_CW(KC_MS_WH_LEFT, KC_MS_WH_RIGHT),     ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN)  },
     [_MAC] =     { ENCODER_CCW_CW(KC_MS_WH_LEFT, KC_MS_WH_RIGHT),     ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN)  },
     [_FN]     =  { ENCODER_CCW_CW(KC_VOLD, KC_VOLU),                  ENCODER_CCW_CW(TAB_L, TAB_R) },
     [_NUMPAD] =  { ENCODER_CCW_CW(KC_UP, KC_DOWN),                    ENCODER_CCW_CW(KC_LEFT, KC_RIGHT) },
@@ -242,7 +240,6 @@ KeyCallback CUSTOM_MOD_TAP_KEYS[] = {
     /* { KC_RSFT, toggle_mouse_layer }, */
 };
 
-
 bool process_custom_mod_tap_user(uint16_t keycode, keyrecord_t *record) {
     bool found_key = false;
 
@@ -319,8 +316,8 @@ KeyCallback CUSTOM_KEYS[] = {
     { CLICK_THIS_SPOT, click_this_spot },
     { WORKSPACE_LEFT, workspace_left },
     { WORKSPACE_RIGHT, workspace_right },
-    { POWERSCROLL_UP, powerscroll_up },
-    { POWERSCROLL_DOWN, powerscroll_down },
+    /* { POWERSCROLL_UP, powerscroll_up }, */
+    /* { POWERSCROLL_DOWN, powerscroll_down }, */
     { TO_DEFAULT_LAYER, to_default_layer },
     { TOGGLE_MAC, toggle_macos_default },
 };
