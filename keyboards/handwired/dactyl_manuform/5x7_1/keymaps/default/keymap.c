@@ -7,6 +7,7 @@
 #include "./custom_keycodes.c"
 #include "./layers.c"
 #include "./tap_dance.c"
+#include "qmk-notifier/notifier.h"
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -363,6 +364,10 @@ bool process_detected_host_os_kb(os_variant_t detected_os) {
     }
 
     return true;
+}
+
+void raw_hid_receive(uint8_t *data, uint8_t length) {
+    hid_notify(data, length);
 }
 
 void keyboard_post_init_user(void) {
