@@ -43,20 +43,41 @@
 
     "caps_word": {
         "enabled": true,
-        "both_shifts_turns_on": true,
+        "both_shifts_turns_on": true
     },
 
     "matrix_pins": {
-        "rows": [ "GP7", "GP6", "GP5", "GP4", "GP3", "GP2" ],
-        "cols": [ "GP9", "GP10", "GP11", "GP12", "GP13", "GP14", "GP15" ]
+        "rows": [
+            "GP7",
+            "GP6",
+            "GP5",
+            "GP4",
+            "GP3",
+            "GP2"
+        ],
+        "cols": [
+            "GP15",
+            "GP14",
+            "GP13",
+            "GP12",
+            "GP11",
+            "GP10",
+            "GP9"
+        ]
     },
 
     "split": {
         "enabled": true,
         "matrix_pins": {
             "right": {
-                "rows": [ "GP2", "GP3", "GP4", "GP5", "GP6", "GP7" ],
-                "cols": [ "GP15", "GP14", "GP13", "GP12", "GP11", "GP10", "GP9" ]
+                "rows": [
+                    "GP2",
+                    "GP3",
+                    "GP4",
+                    "GP5",
+                    "GP6",
+                    "GP7"
+                ]
             }
         },
         "bootmagic": {
@@ -73,7 +94,7 @@
                 "layer_state": true,
                 "modifiers": true,
                 "wpm": true
-            },
+            }
         }
     },
 
@@ -195,7 +216,7 @@
                 { "matrix": [ 11, 3 ], "x": 9,  "y": 6 },
                 { "matrix": [ 11, 4 ], "x": 10, "y": 6 },
 
-                { "matrix": [ 10, 0 ], "x": 10, "y": 6 },
+                { "matrix": [ 10, 0 ], "x": 10, "y": 6 }
             ]
 
         }
