@@ -72,16 +72,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                  _______, _______,
                                                                  _______, _______,
                                                                  _______,
-        // right hand
-        KC_F11,   KC_F6,       KC_F7,      KC_F8,    KC_F9,       KC_F10,    QK_BOOT,
-        KC_F12,   KC_F6,       KC_F7,      KC_F8,    KC_F9,       KC_F10,    _______,
-        KC_F13,   KC_MS_BTN4,  _______,    KC_UP,    KC_MS_BTN5,  _______,   _______,
-        KC_F14,   _______,     KC_LEFT,    KC_DOWN,  KC_RGHT,     _______,   _______,
-                                           _______,   _______,    _______,   TOGGLE_VIM,
-        _______,  _______,
-        KC_DEL,   _______,
-        _______,  _______,
-        _______
+                                                // right hand
+                                                KC_F11,   KC_F6,       KC_F7,      KC_F8,    KC_F9,       KC_F10,    QK_BOOT,
+                                                KC_F12,   KC_F6,       KC_F7,      KC_F8,    KC_F9,       KC_F10,    _______,
+                                                KC_F13,   KC_MS_BTN4,  _______,    KC_UP,    KC_MS_BTN5,  _______,   _______,
+                                                KC_F14,   _______,     KC_LEFT,    KC_DOWN,  KC_RGHT,     _______,   _______,
+                                                                                _______,   _______,    _______,   TOGGLE_VIM,
+                                                _______,  _______,
+                                                KC_DEL,   _______,
+                                                _______,  _______,
+                                                _______
     ),
 
     [_NUMPAD] = LAYOUT_5x7_1(
