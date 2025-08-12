@@ -8,6 +8,7 @@
 #include "./layers.c"
 #include "./tap_dance.c"
 #include "qmk-notifier/notifier.h"
+#include "../../qmk-field-kit/field_kit.h"
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -73,11 +74,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                  _______, _______,
                                                                  _______,
                                                 // right hand
-                                                KC_F11,   KC_F6,       KC_F7,      KC_F8,    KC_F9,       KC_F10,    QK_BOOT,
-                                                KC_F12,   KC_F6,       KC_F7,      KC_F8,    KC_F9,       KC_F10,    _______,
-                                                KC_F13,   KC_MS_BTN4,  _______,    KC_UP,    KC_MS_BTN5,  _______,   _______,
-                                                KC_F14,   _______,     KC_LEFT,    KC_DOWN,  KC_RGHT,     _______,   _______,
-                                                                                _______,   _______,    _______,   TOGGLE_VIM,
+                                                KC_F11,   _______,      _______,    _______,  _______,     _______,  QK_BOOT,
+                                                KC_F12,   _______,      KC_F6,      KC_F7,    KC_F8,       KC_F9,    _______,
+                                                KC_F13,   _______,      KC_F9,      KC_F10,   KC_F11,      KC_F12,   _______,
+                                                KC_F14,   _______,      KC_LEFT,    KC_DOWN,  KC_UP,       KC_RGHT,  _______,
+                                                                                    _______,   _______,    _______,  TOGGLE_VIM,
                                                 _______,  _______,
                                                 KC_DEL,   _______,
                                                 _______,  _______,
@@ -368,6 +369,7 @@ bool process_detected_host_os_kb(os_variant_t detected_os) {
 
 void raw_hid_receive(uint8_t *data, uint8_t length) {
     hid_notify(data, length);
+    field_kit_process_message(data, length);
 }
 
 void keyboard_post_init_user(void) {
